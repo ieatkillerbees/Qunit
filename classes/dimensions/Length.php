@@ -14,7 +14,7 @@ namespace Qunit\dimensions;
  * Length - Qunit dimension for length measurements.
  * @package Qunit.dimensions
  */
-class Length extends Qunit\core\Converter
+class Length extends \Qunit\core\Converter
 {
     /**
      * Dimension configuration file.

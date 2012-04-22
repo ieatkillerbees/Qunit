@@ -122,6 +122,40 @@ class Converter extends Qunit
         }
     }
     
+    private function _convertSi($quantity, $factor = 'base')
+    {
+        $siFactors = array(
+            'yotta' => 1e24, 'yocto' => 1e-24,
+            'zetta' => 1e21, 'zepto' => 1e-21,
+            'exa'   => 1e18, 'atto'  => 1e-18,
+            'peta'  => 1e15, 'femto' => 1e-15,
+            'tera'  => 1e12, 'pico'  => 1e-12,
+            'giga'  => 1e9,  'nano'  => 1e-9,
+            'mega'  => 1e6,  'micro' => 1e-6,
+            'kilo'  => 1e3,  'milli' => 1e-4,
+            'hecto' => 1e2,  'centi' => 1e-2,
+            'deca'  => 1e1,  'deci'  => 1e-1,
+            'base'  => 1e0,
+        );
+        
+        return ($quantity / $siFactors[$factor]);
+    }
+    
+    public function toFactor($factor = 'base')
+    {
+
+        if($this->unit['si_unit'])
+        {
+            if($this->unit['si_base_unit']) {
+                return $this->_convertSi($this->quantity, $factor);
+            }
+            else {
+                return $this->_convertSi($this->toBase(),$factor);
+            }
+        }
+        throw new QunitInvalidUnit;
+    }
+    
     /**
      * Convert's the current quantity to base
      * @return float
