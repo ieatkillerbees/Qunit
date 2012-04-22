@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a2" title="Qunit">
+  <file path="dimensions/Length.php" hash="849159a32e937a2c14705df19c2a094c" package="Qunit\dimensions">
+    <docblock line="2">
+      <description><![CDATA[Length.php]]></description>
+      <long-description><![CDATA[<p>Class definition for the Length dimension.</p>]]></long-description>
+      <tag line="2" name="author" description="Samantha Quinones &lt;ieatkillerbees@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="2012 Samantha Quinones"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/BSD-3-Clause BSD License"/>
+      <tag line="2" name="package" description="Qunit.dimensions"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Qunit\dimensions" line="17" package="Qunit\dimensions">
+      <name>Length</name>
+      <full_name>\Qunit\dimensions\Length</full_name>
+      <extends>\Qunit\core\Converter</extends>
+      <docblock line="13">
+        <description><![CDATA[Length - Qunit dimension for length measurements.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="13" name="package" description="Qunit.dimensions"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="23" package="Default">
+        <name>$config_file</name>
+        <default><![CDATA['Length.ini']]></default>
+        <docblock line="19">
+          <description><![CDATA[Dimension configuration file.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+    </class>
+  </file>
+  <file path="core/Qunit.php" hash="f079d0e6f0f8e45b04c25c7599eff9b2" package="Qunit\core">
+    <docblock line="2">
+      <description><![CDATA[Qunit.php]]></description>
+      <long-description><![CDATA[<p>Class definition for the Qunit abstract base class.</p>]]></long-description>
+      <tag line="2" name="author" description="Samantha Quinones &lt;ieatkillerbees@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="2012 Samantha Quinones"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/BSD-3-Clause BSD License"/>
+      <tag line="2" name="package" description="Qunit.core"/>
+    </docblock>
+    <class final="false" abstract="true" namespace="Qunit\core" line="19" package="Qunit\core">
+      <name>Qunit</name>
+      <full_name>\Qunit\core\Qunit</full_name>
+      <extends/>
+      <docblock line="14">
+        <description><![CDATA[Qunit abstract class, defines internal data handling methods.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="14" name="package" description="Qunit.core"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="25" package="Default">
+        <name>$_properties</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="21">
+          <description><![CDATA[Private pseudo-properties]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="35" package="">
+        <name>__get</name>
+        <type>function</type>
+        <docblock line="28">
+          <description><![CDATA[Magic getter]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="" type="string" variable="$property">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="28" name="throws" description="" type="\Qunit\core\QunitPropertyException">
+            <type by_reference="false">\Qunit\core\QunitPropertyException</type>
+          </tag>
+          <tag line="28" name="internal" description=""/>
+        </docblock>
+        <argument line="35">
+          <name>$property</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="49" package="">
+        <name>__set</name>
+        <type>function</type>
+        <docblock line="43">
+          <description><![CDATA[Magic setter]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="param" description="" type="string" variable="$property">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="43" name="param" description="" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="43" name="internal" description=""/>
+        </docblock>
+        <argument line="49">
+          <name>$property</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="49">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="60" package="">
+        <name>__isset</name>
+        <type>function</type>
+        <docblock line="54">
+          <description><![CDATA[Magic isset]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="54" name="param" description="" type="string" variable="$property">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="54" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="54" name="internal" description=""/>
+        </docblock>
+        <argument line="60">
+          <name>$property</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="core/QunitException.php" hash="d8dc56acd0b9db51961e55a226c334ba" package="Qunit\core">
+    <docblock line="2">
+      <description><![CDATA[QunitException.php]]></description>
+      <long-description><![CDATA[<p>Qunit exception handlers</p>]]></long-description>
+      <tag line="2" name="package" description="Qunit.core"/>
+      <tag line="2" name="author" description="Samantha Quinones &lt;ieatkillerbees@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="2012 Samantha Quinones"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/BSD-3-Clause BSD License"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Qunit\core" line="18" package="Qunit\core">
+      <name>QunitPropertyException</name>
+      <full_name>\Qunit\core\QunitPropertyException</full_name>
+      <extends>\Exception</extends>
+      <docblock line="14">
+        <description><![CDATA[QunitPropertyException]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="14" name="package" description="Qunit.core"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="23" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="20">
+          <description><![CDATA[constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="Qunit\core" line="34" package="Qunit\core">
+      <name>QunitInvalidUnit</name>
+      <full_name>\Qunit\core\QunitInvalidUnit</full_name>
+      <extends>\Exception</extends>
+      <docblock line="30">
+        <description><![CDATA[QunitInvalidUnit]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="30" name="package" description="Qunit.core"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="39" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="36">
+          <description><![CDATA[constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+    <class final="false" abstract="false" namespace="Qunit\core" line="49" package="Qunit\core">
+      <name>QunitInvalidQuantity</name>
+      <full_name>\Qunit\core\QunitInvalidQuantity</full_name>
+      <extends>\Exception</extends>
+      <docblock line="45">
+        <description><![CDATA[QunitInvalidQuantity]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="45" name="package" description="Qunit.core"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="54" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="51">
+          <description><![CDATA[constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="core/Config.php" hash="83799c9f77c94bcaf9cf81e38427afb0" package="Qunit\core">
+    <docblock line="2">
+      <description><![CDATA[Config.php]]></description>
+      <long-description><![CDATA[<p>Configuration file handler</p>]]></long-description>
+      <tag line="2" name="author" description="Samantha Quinones &lt;ieatkillerbees@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="2012 Samantha Quinones"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/BSD-3-Clause BSD License"/>
+      <tag line="2" name="package" description="Qunit.core"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Qunit\core" line="21" package="Qunit\core">
+      <name>Config</name>
+      <full_name>\Qunit\core\Config</full_name>
+      <extends>\Qunit\core\Qunit</extends>
+      <docblock line="14">
+        <description><![CDATA[Config
+Configuration object to handle config (ini) files.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="14" name="package" description="Qunit.core"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="27" package="">
+        <name>getSections</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Returns an array of configuration sections]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="36" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="32">
+          <description><![CDATA[Config constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="param" description="string" type="" variable="$config_file"/>
+        </docblock>
+        <argument line="36">
+          <name>$config_file</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="core/Converter.php" hash="85acb70ba84f2b6fa0a80bd369854037" package="Qunit\core;">
+    <docblock line="2">
+      <description><![CDATA[Config.php]]></description>
+      <long-description><![CDATA[<p>Configuration file handler</p>]]></long-description>
+      <tag line="2" name="author" description="Samantha Quinones &lt;ieatkillerbees@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="2012 Samantha Quinones"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/BSD-3-Clause BSD License"/>
+      <tag line="2" name="package" description="Qunit.core;"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Qunit\core" line="18" package="Qunit\core">
+      <name>Converter</name>
+      <full_name>\Qunit\core\Converter</full_name>
+      <extends>\Qunit\core\Qunit</extends>
+      <docblock line="14">
+        <description><![CDATA[Converter]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="14" name="package" description="Qunit.core"/>
+      </docblock>
+      <constant namespace="Qunit\core" line="27" package="Default">
+        <name>BASE_FROM</name>
+        <value><![CDATA[0]]></value>
+        <docblock line="24">
+          <description><![CDATA[Convert from base]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="Qunit\core" line="32" package="Default">
+        <name>BASE_TO</name>
+        <value><![CDATA[1]]></value>
+        <docblock line="29">
+          <description><![CDATA[Convert to base]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="public" line="38" package="Default">
+        <name>$config_file</name>
+        <default><![CDATA[]]></default>
+        <docblock line="34">
+          <description><![CDATA[Configuration file]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="34" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Qunit\core" line="44" package="">
+        <name>_getUnits</name>
+        <type>function</type>
+        <docblock line="40">
+          <description><![CDATA[Returns a list of units defined for the current dimension]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Qunit\core" line="57" package="">
+        <name>_isUnit</name>
+        <type>function</type>
+        <docblock line="52">
+          <description><![CDATA[Checks is a unit is defined in this dimension.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="param" description="" type="string" variable="$unit">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="52" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$unit</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Qunit\core" line="69" package="">
+        <name>_getUnit</name>
+        <type>function</type>
+        <docblock line="62">
+          <description><![CDATA[Returns a unit definition as an array.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="62" name="param" description="Unit name" type="string" variable="$unit">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="62" name="param" description="Variant name" type="string" variable="$variant">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="62" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="62" name="throws" description="" type="\Qunit\core\QunitInvalidUnit">
+            <type by_reference="false">\Qunit\core\QunitInvalidUnit</type>
+          </tag>
+        </docblock>
+        <argument line="69">
+          <name>$unit</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="69">
+          <name>$variant</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Qunit\core" line="107" package="">
+        <name>_convertBase</name>
+        <type>function</type>
+        <docblock line="100">
+          <description><![CDATA[Converts a quantity to the dimension's base unit]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="100" name="param" description="" type="float" variable="$quantity">
+            <type by_reference="false">float</type>
+          </tag>
+          <tag line="100" name="param" description="" type="array" variable="$unit">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="100" name="param" description="" type="int" variable="$direction">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="100" name="return" description="" type="float">
+            <type by_reference="false">float</type>
+          </tag>
+        </docblock>
+        <argument line="107">
+          <name>$quantity</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="107">
+          <name>$unit</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="107">
+          <name>$direction</name>
+          <default><![CDATA[self::BASE_TO]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="129" package="">
+        <name>toBase</name>
+        <type>function</type>
+        <docblock line="125">
+          <description><![CDATA[Convert's the current quantity to base]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="125" name="return" description="" type="float">
+            <type by_reference="false">float</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="140" package="">
+        <name>to</name>
+        <type>function</type>
+        <docblock line="134">
+          <description><![CDATA[Converts the current quantity to another unit]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="134" name="param" description="" type="string" variable="$unit">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="134" name="return" description="" type="float">
+            <type by_reference="false">float</type>
+          </tag>
+          <tag line="134" name="throws" description="" type="\Qunit\core\QunitInvalidUnit">
+            <type by_reference="false">\Qunit\core\QunitInvalidUnit</type>
+          </tag>
+        </docblock>
+        <argument line="140">
+          <name>$unit</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="162" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="154">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="154" name="param" description="" type="float" variable="$quantity">
+            <type by_reference="false">float</type>
+          </tag>
+          <tag line="154" name="param" description="" type="string" variable="$unit">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="154" name="param" description="" type="string" variable="$variant">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="154" name="throws" description="" type="\Qunit\core\QunitInvalidUnit">
+            <type by_reference="false">\Qunit\core\QunitInvalidUnit</type>
+          </tag>
+          <tag line="154" name="throws" description="" type="\Qunit\core\QunitInvalidQuantity">
+            <type by_reference="false">\Qunit\core\QunitInvalidQuantity</type>
+          </tag>
+        </docblock>
+        <argument line="162">
+          <name>$quantity</name>
+          <default><![CDATA[1]]></default>
+          <type/>
+        </argument>
+        <argument line="162">
+          <name>$unit</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+        <argument line="162">
+          <name>$variant</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <package name="" full_name=""/>
+  <package name="Default" full_name="Default"/>
+  <package name="Qunit" full_name="Qunit">
+    <package name="core" full_name="Qunit\core"/>
+    <package name="core;" full_name="Qunit\core;"/>
+    <package name="dimensions" full_name="Qunit\dimensions"/>
+  </package>
+  <namespace name="Qunit" full_name="Qunit">
+    <namespace name="core" full_name="Qunit\core"/>
+    <namespace name="dimensions" full_name="Qunit\dimensions"/>
+  </namespace>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
