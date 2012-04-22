@@ -1,20 +1,23 @@
 <?php
 /**
- * \Qunit\Config 
- * Configuration object to handle config (ini) files.
+ * Config.php
  * 
- * @package    Qunit
- * @subpackage Config
+ * Configuration file handler
  * @author     Samantha Quinones <ieatkillerbees@gmail.com>
  * @copyright  2012 Samantha Quinones
  * @license    http://opensource.org/licenses/BSD-3-Clause BSD License
+ * @package Qunit.core
  */
 
-namespace Qunit;
+namespace Qunit\core;
+
 /**
- * Magic Properties
- * @property dimension
+ * Config 
+ * Configuration object to handle config (ini) files.
+ * 
+ * @package    Qunit.core
  */
+
 class Config extends Qunit
 {
     /**
@@ -28,7 +31,7 @@ class Config extends Qunit
 
     /**
      * Config constructor
-     * @param Converter $converter 
+     * @param string
      */
     public function __construct($config_file)
     {

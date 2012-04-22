@@ -2,13 +2,12 @@
 /**
  * Qunit
  * 
- * @package   Qunit 
- * @author    Samantha Quinones <ieatkillerbees@gmail.com>
- * @copyright 2012 Samantha Quinones
- * @license   http://opensource.org/licenses/BSD-3-Clause BSD License
+ * @author     Samantha Quinones <ieatkillerbees@gmail.com>
+ * @copyright  2012 Samantha Quinones
+ * @license    http://opensource.org/licenses/BSD-3-Clause BSD License
  */
 
-namespace Qunit;
+namespace Qunit\core;
 
 define('CONFIG_DIR',dirname(__FILE__)."/config/");
 
@@ -17,15 +16,15 @@ function loader($class)
 {
     $class   = basename(str_replace("\\","/",$class));
     $classes = array(
-        'Config'    => '/classes/Config.php',
-        'Converter' => '/classes/Converter.php',
-        'Length'    => '/classes/Length.php',
-        'Qunit'     => '/classes/Qunit.php',
-        'QunitInvalidUnit'=> '/classes/QunitException.php',
-        'QunitInvalidQuantity'=> '/classes/QunitException.php',
-        'QunitPropertyException'=> '/classes/QunitException.php'
+        'Config'                => 'core/Config.php',
+        'Converter'             => 'core/Converter.php',
+        'Qunit'                 => 'core/Qunit.php',
+        'QunitInvalidUnit'      => 'core/QunitException.php',
+        'QunitInvalidQuantity'  => 'core/QunitException.php',
+        'QunitPropertyException'=> 'core/QunitException.php',
+        'Length'                => 'dimensions/Length.php',
     );
-    require(dirname(__FILE__).$classes[$class]);
+    require(dirname(__FILE__).'/classes/'.$classes[$class]);
 }
 
-spl_autoload_register('\Qunit\loader');
+spl_autoload_register('\Qunit\core\loader');

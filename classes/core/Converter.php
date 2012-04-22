@@ -1,24 +1,40 @@
 <?php
 /**
- * @package    Qunit
- * @subpackage core
+ * Config.php
+ * 
+ * Configuration file handler
  * @author     Samantha Quinones <ieatkillerbees@gmail.com>
  * @copyright  2012 Samantha Quinones
  * @license    http://opensource.org/licenses/BSD-3-Clause BSD License
+ * @package    Qunit.core;
  */
-namespace Qunit;
+
+namespace Qunit\core;
 
 /**
- * 
+ * Converter
+ * @package Qunit.core
  */
 class Converter extends Qunit
 {
-    /**
+    /*
      * conversion flags 
      */
+    
+    /**
+     * Convert from base 
+     */
     const BASE_FROM = 0;
+    
+    /**
+     * Convert to base 
+     */
     const BASE_TO   = 1;
     
+    /**
+     * Configuration file
+     * @var string
+     */
     public $config_file;
     
     /**
