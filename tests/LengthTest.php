@@ -37,7 +37,10 @@ class LengthTest extends PHPUnit_Framework_TestCase
                
         echo "\nKM: {$meters->toFactor('kilo')}";
         echo "\nMM: {$meters->toFactor('milli')}";
+//        echo "\nMfeet: {$feet->t?oFactor('milli')}";
         
+        $gallons = new \Qunit\dimensions\Volume(5,'gallon');
+        echo "\ncu.m: {$gallons->toCubicMeter()->quantity}";
     }
 }
 

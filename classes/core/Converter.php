@@ -89,7 +89,8 @@ class Converter extends Qunit
             }
             // otherwise use the first factor
             else {
-                $unit['factor'] = $unit['factor'][0];
+                $keys = array_keys($unit['factor']);
+                $unit['factor'] = $unit['factor'][$keys[0]];
             }
         }
         
@@ -113,11 +114,11 @@ class Converter extends Qunit
         switch ($direction)
         {
             case self::BASE_FROM:
-                return (float) ($quantity / ($factor * $exponent) + $offset);
+                return ($quantity / ($factor * $exponent) + $offset);
                 break;
             case self::BASE_TO:
             default:
-                return (float) ($quantity * ($factor * $exponent) + $offset);
+                return ($quantity * ($factor * $exponent) + $offset);
                 break;
         }
     }

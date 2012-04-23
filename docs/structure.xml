@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a2" title="Qunit">
-  <file path="dimensions/Length.php" hash="849159a32e937a2c14705df19c2a094c" package="Qunit\dimensions">
+  <file path="dimensions/Length.php" hash="b58d1ba3294785741d58cbdff6a20ad7" package="Qunit\dimensions">
     <docblock line="2">
       <description><![CDATA[Length.php]]></description>
       <long-description><![CDATA[<p>Class definition for the Length dimension.</p>]]></long-description>
@@ -240,7 +240,7 @@ Configuration object to handle config (ini) files.]]></description>
       </method>
     </class>
   </file>
-  <file path="core/Converter.php" hash="85acb70ba84f2b6fa0a80bd369854037" package="Qunit\core;">
+  <file path="core/Converter.php" hash="1d249ece09c65eecee30ebbc02c8a288" package="Qunit\core;">
     <docblock line="2">
       <description><![CDATA[Config.php]]></description>
       <long-description><![CDATA[<p>Configuration file handler</p>]]></long-description>
@@ -249,6 +249,12 @@ Configuration object to handle config (ini) files.]]></description>
       <tag line="2" name="license" description="http://opensource.org/licenses/BSD-3-Clause BSD License"/>
       <tag line="2" name="package" description="Qunit.core;"/>
     </docblock>
+    <parse_markers>
+      <error line="125" code="50010">No DocBlock was found for method _convertSi()</error>
+      <error line="144" code="50010">No DocBlock was found for method toFactor()</error>
+      <error line="188" code="50010">No DocBlock was found for method _strCameltoUnderscore()</error>
+      <error line="194" code="50010">No DocBlock was found for method __call()</error>
+    </parse_markers>
     <class final="false" abstract="false" namespace="Qunit\core" line="18" package="Qunit\core">
       <name>Converter</name>
       <full_name>\Qunit\core\Converter</full_name>
@@ -380,72 +386,118 @@ Configuration object to handle config (ini) files.]]></description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="129" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Qunit\core" line="125" package="">
+        <name>_convertSi</name>
+        <type>function</type>
+        <argument line="125">
+          <name>$quantity</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="125">
+          <name>$factor</name>
+          <default><![CDATA['base']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="144" package="">
+        <name>toFactor</name>
+        <type>function</type>
+        <argument line="144">
+          <name>$factor</name>
+          <default><![CDATA['base']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="163" package="">
         <name>toBase</name>
         <type>function</type>
-        <docblock line="125">
+        <docblock line="159">
           <description><![CDATA[Convert's the current quantity to base]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="125" name="return" description="" type="float">
+          <tag line="159" name="return" description="" type="float">
             <type by_reference="false">float</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="140" package="">
-        <name>to</name>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Qunit\core" line="174" package="">
+        <name>_convert</name>
         <type>function</type>
-        <docblock line="134">
+        <docblock line="168">
           <description><![CDATA[Converts the current quantity to another unit]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="134" name="param" description="" type="string" variable="$unit">
+          <tag line="168" name="param" description="" type="string" variable="$unit">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="134" name="return" description="" type="float">
+          <tag line="168" name="return" description="" type="float">
             <type by_reference="false">float</type>
           </tag>
-          <tag line="134" name="throws" description="" type="\Qunit\core\QunitInvalidUnit">
+          <tag line="168" name="throws" description="" type="\Qunit\core\QunitInvalidUnit">
             <type by_reference="false">\Qunit\core\QunitInvalidUnit</type>
           </tag>
         </docblock>
-        <argument line="140">
+        <argument line="174">
           <name>$unit</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="162" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Qunit\core" line="188" package="">
+        <name>_strCameltoUnderscore</name>
+        <type>function</type>
+        <argument line="188">
+          <name>$string</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="194" package="">
+        <name>__call</name>
+        <type>function</type>
+        <argument line="194">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="194">
+          <name>$args</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Qunit\core" line="216" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="154">
+        <docblock line="208">
           <description><![CDATA[Constructor]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="154" name="param" description="" type="float" variable="$quantity">
+          <tag line="208" name="param" description="" type="float" variable="$quantity">
             <type by_reference="false">float</type>
           </tag>
-          <tag line="154" name="param" description="" type="string" variable="$unit">
+          <tag line="208" name="param" description="" type="string" variable="$unit">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="154" name="param" description="" type="string" variable="$variant">
+          <tag line="208" name="param" description="" type="string" variable="$variant">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="154" name="throws" description="" type="\Qunit\core\QunitInvalidUnit">
+          <tag line="208" name="throws" description="" type="\Qunit\core\QunitInvalidUnit">
             <type by_reference="false">\Qunit\core\QunitInvalidUnit</type>
           </tag>
-          <tag line="154" name="throws" description="" type="\Qunit\core\QunitInvalidQuantity">
+          <tag line="208" name="throws" description="" type="\Qunit\core\QunitInvalidQuantity">
             <type by_reference="false">\Qunit\core\QunitInvalidQuantity</type>
           </tag>
         </docblock>
-        <argument line="162">
+        <argument line="216">
           <name>$quantity</name>
           <default><![CDATA[1]]></default>
           <type/>
         </argument>
-        <argument line="162">
+        <argument line="216">
           <name>$unit</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
-        <argument line="162">
+        <argument line="216">
           <name>$variant</name>
           <default><![CDATA[NULL]]></default>
           <type/>

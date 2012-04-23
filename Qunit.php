@@ -23,6 +23,7 @@ function loader($class)
         'QunitInvalidQuantity'  => 'core/QunitException.php',
         'QunitPropertyException'=> 'core/QunitException.php',
         'Length'                => 'dimensions/Length.php',
+        'Volume'                => 'dimensions/Volume.php',
     );
     require(dirname(__FILE__).'/classes/'.$classes[$class]);
 }
