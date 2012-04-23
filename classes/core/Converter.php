@@ -171,7 +171,7 @@ class Converter extends Qunit
      * @return float
      * @throws QunitInvalidUnit 
      */
-    public function to($unit)
+    private function _convert($unit)
     {
         // throw out on a bad unit
         if(!$this->_isUnit($unit)) {
@@ -183,6 +183,26 @@ class Converter extends Qunit
         
         // Convert quantity to base, then to the new unit
         return (float) $this->_convertBase($this->toBase(),$toUnit, self::BASE_FROM);
+    }
+    
+    private function _strCameltoUnderscore($string)
+    {
+        $string[0] = strtolower($string[0]);
+        return preg_replace_callback('/([A-Z])/',function ($char) { return "_".strtolower($char[1]); },$string);
+    }
+    
+    public function __call($method,$args)
+    {
+        $variant = isset($args[0]) ? $args[0] : NULL;
+        if(substr($method,0,2) === "to")
+        {
+            $unit = $this->_strCameltoUnderscore(substr($method,2));
+            if($this->_isUnit($unit)) {
+                $quantity = $this->_convert($unit);
+                $class = '\\Qunit\\dimensions\\' . ucfirst(strtolower($this->config->dimension['name']));
+                return new $class($quantity,$unit,$variant);
+            }
+        }
     }
     
     /**
@@ -203,13 +223,14 @@ class Converter extends Qunit
             throw new QunitInvalidUnit;
         }
         $this->unit     = $this->_getUnit($unit,$variant);
+        $this->base     = $this->_getUnit($this->config->dimension['base_unit']);
         
         if(!is_numeric($quantity)) {
             throw new QunitInvalidQuantity;
         }
-        $this->quantity =  (float) $quantity;
-    
-        $this->base     = $this->_getUnit($this->config->dimension['base_unit']);
+        $this->quantity     = (float) $quantity;
+        $this->baseQuantity = (float) $this->toBase();
+
     }
 }
 

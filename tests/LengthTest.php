@@ -23,8 +23,21 @@ class LengthTest extends PHPUnit_Framework_TestCase
     
     public function testSi()
     {
-        $length = new Length(2000,'meter');
-        echo $length->toFactor('exa');
+        $yards = new Length(200,'yard');
+        echo "\nYARDS: {$yards->quantity}";
+        
+        $feet = $yards->toFoot('us');
+        echo "\nFEET: {$feet->quantity}";
+        
+        $meters = $feet->toMeter();
+        echo "\nMETERS: {$meters->quantity}";
+        
+        $lightsecs = $feet->toLightSecond();
+        echo "\nLIGHT-SECS: {$lightsecs->quantity}";
+               
+        echo "\nKM: {$meters->toFactor('kilo')}";
+        echo "\nMM: {$meters->toFactor('milli')}";
+        
     }
 }
 
